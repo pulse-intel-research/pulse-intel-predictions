@@ -1,8 +1,8 @@
 {
   "_README": "PULSE INTEL — Live Forecast Tracking. This file is the source of truth for the Live Forecast Tracking card on the Dashboard. lock_prediction.py writes predicted_* fields and flips status to 'locked'. record_actual.py writes actual_* fields and flips status to 'resolved'. Mirror this file to https://github.com/pulse-intel-research/pulse-intel-predictions/blob/main/predictions.json",
   "generated_at": "2026-04-26",
-  "methodology_version": "v1-primary-2026",
-  "methodology_notes": "Primary forecasts use v1-primary-2026 (adjustments to v1-composite-tuned: incumbency=0, approval=0, sentiment=0, fundamentals 0.22→0.10, polls=independent-only, CI×1.5, manual endorsement modifier). Underlying ensemble was calibrated against 65 general elections (2016-2024). Primary application is out-of-distribution; full disclosure in PRIMARY_METHODOLOGY.md. Lock window: 10 days before each primary. No cherry-picking — all selected primaries forecast publicly regardless of confidence.",
+  "methodology_version": "mixed",
+  "methodology_notes": "Registry tracks both primary forecasts (v1-primary-2026) and general-election forecasts (v1-composite-tuned). Each prediction's per-race file specifies which methodology was used at lock time. Primary forecasts (KY, AL, CA, MI, MN) apply adjustments documented in PRIMARY_METHODOLOGY.md. General-election forecasts (NC, OH, ME) use the v1-composite-tuned ensemble in-distribution (the model was calibrated against 65 general elections, 2016-2024). Lock window: 10 days before primaries; ~30 days before generals (Oct 4, 2026 for Nov 3 races). No cherry-picking — all selected races are forecast publicly regardless of confidence.",
   "registry_url": "https://github.com/pulse-intel-research/pulse-intel-predictions",
   "predictions": [
     {
@@ -94,6 +94,60 @@
       "actual_margin": null,
       "called_correctly": null,
       "notes": "Open seat — Tina Smith retiring (Klobuchar is running for GOVERNOR, NOT Senate). Dem primary is progressive-vs-moderate proxy fight: Peggy Flanagan (LG, Warren/Sanders-endorsed) vs Angie Craig (US Rep, DSCC-backed, AIPAC-friendly). Flanagan +13 in only public poll (GQR), but Craig has 4.7x cash advantage. R primary uncompetitive (R hasn't won statewide MN since 2006); top R candidates Royce White, Tafoya, Schwarze."
+    },
+    {
+      "race_id": "nc-senate-general-2026",
+      "race_name": "North Carolina Senate — General Election",
+      "office": "senate",
+      "state": "NC",
+      "party_primary": null,
+      "primary_date": "2026-11-03",
+      "lock_date": "2026-10-04",
+      "status": "scheduled",
+      "predicted_winner": null,
+      "predicted_margin": null,
+      "confidence_interval": null,
+      "methodology_version": null,
+      "actual_winner": null,
+      "actual_margin": null,
+      "called_correctly": null,
+      "notes": "Open seat (Tillis retired). Roy Cooper (D, former 2-term governor, 6 prior statewide wins) vs. Michael Whatley (R, former RNC chair, never run for office). Cook Political Report moved to Lean D in April 2026 after Cooper led 14 pts in Catawba poll, 8 pts in HPU. PULSE INTEL Prediction Engine displays this race in the Active Forecast slot 1; methodology v1-composite-tuned applies in-distribution. Lock scheduled Oct 4, 2026 (~30 days pre-general)."
+    },
+    {
+      "race_id": "oh-senate-special-2026",
+      "race_name": "Ohio Senate Special — General Election",
+      "office": "senate",
+      "state": "OH",
+      "party_primary": null,
+      "primary_date": "2026-11-03",
+      "lock_date": "2026-10-04",
+      "status": "scheduled",
+      "predicted_winner": null,
+      "predicted_margin": null,
+      "confidence_interval": null,
+      "methodology_version": null,
+      "actual_winner": null,
+      "actual_margin": null,
+      "called_correctly": null,
+      "notes": "Special election to fill JD Vance's seat. Sherrod Brown (D, former 3-term Senator) vs. Jon Husted (R, appointed incumbent). RCP avg: Husted +1 (essentially tied). Brown holds +7 net favorability vs Husted -3, but OH voted Trump +11 in 2024 and structural realignment with non-college voters favors Husted. PULSE INTEL Prediction Engine displays this race in slot 2; methodology v1-composite-tuned applies in-distribution. Lock scheduled Oct 4, 2026."
+    },
+    {
+      "race_id": "me-senate-general-2026",
+      "race_name": "Maine Senate — General Election",
+      "office": "senate",
+      "state": "ME",
+      "party_primary": null,
+      "primary_date": "2026-11-03",
+      "lock_date": "2026-10-04",
+      "status": "scheduled",
+      "predicted_winner": null,
+      "predicted_margin": null,
+      "confidence_interval": null,
+      "methodology_version": null,
+      "actual_winner": null,
+      "actual_margin": null,
+      "called_correctly": null,
+      "notes": "Susan Collins (R, 5-term incumbent) vs. presumptive D nominee from June 9 primary (Graham Platner +33 over Mills as of April; Mills rumored to be winding down). Collins net -19 favorability statewide, -30 with independents — worst polling of her career. BUT 2020 polling error precedent: polls had Collins -9, she won by +9 (18-pt swing). PULSE INTEL discounts polls accordingly. Cook: Toss-Up. Methodology v1-composite-tuned in-distribution. Lock scheduled Oct 4, 2026."
     }
   ]
 }
