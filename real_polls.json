@@ -1,0 +1,272 @@
+{
+  "_meta": {
+    "schema_version": 1,
+    "last_refreshed_utc": "2026-04-26T20:30:00Z",
+    "refresh_method": "manual",
+    "refresh_note": "Manually curated from public pollster releases, March-April 2026. Replace with automated RSS ingestion in Phase 2.",
+    "pollster_count": 9,
+    "poll_count": 13
+  },
+  "polls": [
+    {
+      "id": 1,
+      "pollster": "Pew Research Center",
+      "topic": "foreign-policy",
+      "topic_display": "Foreign Policy",
+      "date": "April 7, 2026",
+      "headline": "Negative views of Israel, Netanyahu rise among Americans, especially young people",
+      "findings": [
+        { "label": "Unfavorable view of Israel", "value": "60%" },
+        { "label": "Favorable view of Israel", "value": "37%" },
+        { "label": "Republicans under 50 with negative view", "value": "57%" }
+      ],
+      "n": 3507,
+      "moe": 2.0,
+      "method": "American Trends Panel (online probability panel)",
+      "field_dates": "March 23-29, 2026",
+      "review_status": "verified",
+      "relevance": 10,
+      "url": "https://www.pewresearch.org/short-reads/2026/04/07/negative-views-of-israel-netanyahu-continue-to-rise-among-americans-especially-young-people/"
+    },
+    {
+      "id": 2,
+      "pollster": "Pew Research Center",
+      "topic": "foreign-policy",
+      "topic_display": "Foreign Policy",
+      "date": "April 14, 2026",
+      "headline": "Americans' views of China grow somewhat more positive",
+      "findings": [
+        { "label": "Favorable view of China", "value": "27%" },
+        { "label": "Unfavorable view of China", "value": "71%" },
+        { "label": "Democrats viewing China favorably", "value": "34%" }
+      ],
+      "n": 3507,
+      "moe": 2.0,
+      "method": "American Trends Panel",
+      "field_dates": "March 23-29, 2026",
+      "review_status": "verified",
+      "relevance": 8,
+      "url": "https://www.pewresearch.org/short-reads/2026/04/14/americans-views-of-china-have-grown-somewhat-more-positive-in-recent-years/"
+    },
+    {
+      "id": 3,
+      "pollster": "AP-NORC",
+      "topic": "economy",
+      "topic_display": "Economy",
+      "date": "April 21, 2026",
+      "headline": "Trump approval on economy slumps to 30% as Iran war drives prices higher",
+      "findings": [
+        { "label": "Approve of Trump on economy", "value": "30%" },
+        { "label": "Approve of Trump on Iran", "value": "32%" },
+        { "label": "Republicans approving on economy", "value": "62%" }
+      ],
+      "n": 2596,
+      "moe": 2.6,
+      "method": "AmeriSpeak Panel (probability-based, online + phone)",
+      "field_dates": "April 16-20, 2026",
+      "review_status": "verified",
+      "relevance": 10,
+      "url": "https://apnorc.org/projects/fewer-approve-of-trumps-handling-of-the-economy/"
+    },
+    {
+      "id": 4,
+      "pollster": "AP-NORC",
+      "topic": "electoral",
+      "topic_display": "Electoral Politics",
+      "date": "April 23, 2026",
+      "headline": "Hispanic voters, men, younger adults souring on Trump after key 2024 gains",
+      "findings": [
+        { "label": "Hispanic adults approving of Trump overall", "value": "~25%" },
+        { "label": "Decline in Hispanic approval since March 2025", "value": "-16 pts" },
+        { "label": "Younger Hispanics approving on immigration", "value": "18%" }
+      ],
+      "n": 2596,
+      "moe": 2.6,
+      "method": "AmeriSpeak Panel",
+      "field_dates": "April 16-20, 2026",
+      "review_status": "verified",
+      "relevance": 9,
+      "url": "https://www.usnews.com/news/politics/articles/2026-04-23/some-key-groups-moved-toward-trump-in-2024-heres-what-they-think-now-according-to-ap-norc-polls"
+    },
+    {
+      "id": 5,
+      "pollster": "KFF Health Tracking",
+      "topic": "healthcare",
+      "topic_display": "Healthcare",
+      "date": "January 29, 2026",
+      "headline": "Health care costs top public worry list ahead of 2026 midterms; Democrats hold trust advantage",
+      "findings": [
+        { "label": "Worried about affording health care", "value": "66%" },
+        { "label": "Trust Democrats on cost of health care", "value": "40%" },
+        { "label": "Trust Republicans on cost of health care", "value": "27%" }
+      ],
+      "n": 1426,
+      "moe": 3.0,
+      "method": "SSRS Opinion Panel (online + phone, English/Spanish)",
+      "field_dates": "January 13-20, 2026",
+      "review_status": "verified",
+      "relevance": 9,
+      "url": "https://www.kff.org/public-opinion/kff-health-tracking-poll-health-care-costs-expiring-aca-tax-credits-and-the-2026-midterms/"
+    },
+    {
+      "id": 6,
+      "pollster": "KFF Health Tracking",
+      "topic": "healthcare",
+      "topic_display": "Healthcare",
+      "date": "March 25, 2026",
+      "headline": "About a third of adults turning to AI chatbots for health information",
+      "findings": [
+        { "label": "Adults using AI for health info", "value": "32%" },
+        { "label": "Cite quick/immediate advice as reason", "value": "Most" },
+        { "label": "Confidence in CDC at lowest since pandemic", "value": "Yes" }
+      ],
+      "n": 1334,
+      "moe": 3.0,
+      "method": "SSRS Opinion Panel",
+      "field_dates": "March 2026",
+      "review_status": "verified",
+      "relevance": 8,
+      "url": "https://www.kff.org/series/health-information-and-trust-tracking-poll/"
+    },
+    {
+      "id": 7,
+      "pollster": "Quinnipiac University",
+      "topic": "economy",
+      "topic_display": "Economy",
+      "date": "April 15, 2026",
+      "headline": "Voters blame Trump for high gas prices amid Iran war",
+      "findings": [
+        { "label": "Blame Trump for high gas prices", "value": "65%" },
+        { "label": "Independents blaming Trump on gas", "value": "73%" },
+        { "label": "Trump 'civilization will die' threat unacceptable", "value": "64%" }
+      ],
+      "n": 1028,
+      "moe": 3.8,
+      "method": "Random digit dialing, live interviewers, landline + cell",
+      "field_dates": "April 9-13, 2026",
+      "review_status": "verified",
+      "relevance": 9,
+      "url": "https://poll.qu.edu/poll-results/"
+    },
+    {
+      "id": 8,
+      "pollster": "Quinnipiac University",
+      "topic": "education",
+      "topic_display": "Education",
+      "date": "April 22, 2026",
+      "headline": "Americans want students taught AI but wary of AI use in admissions and tutoring",
+      "findings": [
+        { "label": "Important that students learn to use AI", "value": "74%" },
+        { "label": "Oppose AI screening of college applications", "value": "59%" },
+        { "label": "Oppose AI tutoring in college", "value": "52%" }
+      ],
+      "n": 1500,
+      "moe": 3.0,
+      "method": "Random digit dialing, live interviewers",
+      "field_dates": "April 2026",
+      "review_status": "verified",
+      "relevance": 7,
+      "url": "https://poll.qu.edu/poll-release?releaseid=3958"
+    },
+    {
+      "id": 9,
+      "pollster": "Marist Poll (NPR/PBS News)",
+      "topic": "economy",
+      "topic_display": "Economy",
+      "date": "February 5, 2026",
+      "headline": "Trump's economy disapproval hits new high; majority want focus on lowering prices",
+      "findings": [
+        { "label": "Disapprove of Trump on economy", "value": "59%" },
+        { "label": "Approve of Trump on economy", "value": "36%" },
+        { "label": "Tariffs hurt the economy (independents)", "value": "60%+" }
+      ],
+      "n": 1462,
+      "moe": 2.9,
+      "method": "Multi-mode: live phone, text, online",
+      "field_dates": "January 27-30, 2026",
+      "review_status": "verified",
+      "relevance": 9,
+      "url": "https://maristpoll.marist.edu/wp-content/uploads/2026/02/NPR_PBS-News_Marist-Poll_USA-NOS-and-Tables_202602021147.pdf"
+    },
+    {
+      "id": 10,
+      "pollster": "Marist Poll",
+      "topic": "civics",
+      "topic_display": "Civics & Democracy",
+      "date": "December 17, 2025",
+      "headline": "Six in ten say economy not working for them; widespread pessimism for 2026",
+      "findings": [
+        { "label": "Economy not working for them personally", "value": "61%" },
+        { "label": "Country moving in wrong direction", "value": "63%" },
+        { "label": "Republicans positive about 2026", "value": "74%" }
+      ],
+      "n": 1440,
+      "moe": 3.2,
+      "method": "Multi-mode: live phone, text, online",
+      "field_dates": "December 8-11, 2025",
+      "review_status": "verified",
+      "relevance": 8,
+      "url": "https://maristpoll.marist.edu/polls/2026-economic-outlook-december-2025/"
+    },
+    {
+      "id": 11,
+      "pollster": "Marquette Law School",
+      "topic": "civics",
+      "topic_display": "Civics & Democracy",
+      "date": "April 23, 2026",
+      "headline": "Most favor Supreme Court ruling against Trump on tariff authority; Court approval at 42%",
+      "findings": [
+        { "label": "Favor SCOTUS tariff ruling against Trump", "value": "66%" },
+        { "label": "Court favorability", "value": "42%" },
+        { "label": "Trump favorability", "value": "45%" }
+      ],
+      "n": 982,
+      "moe": 3.4,
+      "method": "SSRS Opinion Panel (online probability)",
+      "field_dates": "April 8-16, 2026",
+      "review_status": "verified",
+      "relevance": 9,
+      "url": "https://law.marquette.edu/poll/2026/04/22/detailed-results-of-the-marquette-law-school-supreme-court-poll-april-8-16-2026-national-issues/"
+    },
+    {
+      "id": 12,
+      "pollster": "Gallup",
+      "topic": "public-safety",
+      "topic_display": "Public Safety",
+      "date": "October 2025",
+      "headline": "Crime in U.S. seen as less serious for second straight year",
+      "findings": [
+        { "label": "Say more crime in U.S. than year ago", "value": "49%" },
+        { "label": "Say crime extremely or very serious", "value": "49%" },
+        { "label": "Worry a great deal about crime (2026)", "value": "39%" }
+      ],
+      "n": 1000,
+      "moe": 4.0,
+      "method": "Telephone interviews (ReconMR)",
+      "field_dates": "October 1-16, 2025",
+      "review_status": "verified",
+      "relevance": 8,
+      "url": "https://news.gallup.com/poll/697124/crime-seen-less-serious-second-straight-year.aspx"
+    },
+    {
+      "id": 13,
+      "pollster": "Siena College / NYT",
+      "topic": "electoral",
+      "topic_display": "Electoral Politics",
+      "date": "December 2025",
+      "headline": "Hochul leads Stefanik 49-30 in 2026 NY governor matchup",
+      "findings": [
+        { "label": "Hochul vs Stefanik", "value": "49% / 30%" },
+        { "label": "Hochul vs Blakeman", "value": "50% / 25%" },
+        { "label": "Voters preferring Democrats on generic ballot", "value": "55%" }
+      ],
+      "n": 801,
+      "moe": 4.1,
+      "method": "Live phone interviews, registered voters",
+      "field_dates": "December 8-12, 2025",
+      "review_status": "verified",
+      "relevance": 8,
+      "url": "https://scri.siena.edu/"
+    }
+  ]
+}
