@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "race_id": "al-senate-primary",
+  "race_title": "Alabama Senate Republican Primary 2026",
+  "race_date": "2026-05-19",
+  "office": "U.S. Senate",
+  "state": "AL",
+  "primary_or_general": "primary",
+  "candidates_in_field": [
+    "Barry Moore",
+    "Steve Marshall",
+    "Wes Hudson"
+  ],
+  "lock_timestamp_utc": "2026-05-09T23:03:38.550794+00:00",
+  "lock_date": "2026-05-09",
+  "days_before_race": 9,
+  "prediction": {
+    "predicted_winner": "Steve Marshall",
+    "predicted_runner_up": "Barry Moore",
+    "predicted_margin_pts": 0.89,
+    "winner_probability_pct": 55.6,
+    "confidence_interval_pts": 5.4,
+    "notes": "3-way race with Wes Hudson as third candidate. NOTE: Trump endorsed Barry Moore on Jan 17, 2026; model still gives Marshall narrow lead on polling weight. Tuberville open seat. AL requires runoff if no majority - runoff date June 16 likely."
+  },
+  "methodology": {
+    "version": "v1-composite-tuned-2026-04-25",
+    "library_version": "73-race-2026-05-06",
+    "coefficients": {
+      "polls": 0.2,
+      "fundamentals": 0.22,
+      "expert": 0.29,
+      "approval_factor": 0.68,
+      "sentiment_calibration": 0.45,
+      "incumbency_advantage": 1.0
+    },
+    "validated_baseline": {
+      "directional_accuracy_pct": 67.7,
+      "mean_absolute_error_pts": 3.89,
+      "brier_score": 0.2373,
+      "races_in_baseline": 65,
+      "validation_locked_date": "2026-04-25"
+    },
+    "primary_ci_inflation": 1.5
+  },
+  "runoff_possible": true,
+  "runoff_date": "2026-06-16",
+  "actual_result_pending": true
+}
