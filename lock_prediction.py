@@ -9,8 +9,9 @@ a prediction (10 days before each race resolves).
 Usage:
     python3 lock_prediction.py
 
-The script will prompt you for the race details, generate the JSON
-entry, save it to the correct path, and print the git commands.
+The script prompts you for the race details, generates the JSON entry,
+saves it to predictions/YYYY-MM-DD/{race_id}.json, then prints the
+git commands you should run to commit + push.
 
 Methodology: PULSE INTEL composite-tuned 6-component ensemble.
 Coefficients: polls 0.20, fundamentals 0.22, expert 0.29, approval 0.68,
@@ -20,7 +21,6 @@ to 73 races; formal re-tuning against full library pending.
 """
 
 import json
-import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -37,9 +37,11 @@ COEFFICIENTS = {
     "incumbency_advantage": 1.0,
 }
 
-# Known active 2026 races — for quick lookup. Update as new races are added.
+# Race IDs match the PULSE INTEL platform's MARKET_DATA keys exactly.
+# KY and AL Senate primaries use 'ky-senate-primary' and 'al-senate-primary'
+# (no '-r-' suffix). GA Governor uses 'ga-gov-r-primary'.
 RACES = {
-    "ky-senate-r-primary": {
+    "ky-senate-primary": {
         "title": "Kentucky Senate Republican Primary 2026",
         "race_date": "2026-05-19",
         "candidates": ["Andy Barr", "Daniel Cameron", "Nate Morris"],
@@ -48,7 +50,7 @@ RACES = {
         "primary_or_general": "primary",
         "runoff_possible": False,
     },
-    "al-senate-r-primary": {
+    "al-senate-primary": {
         "title": "Alabama Senate Republican Primary 2026",
         "race_date": "2026-05-19",
         "candidates": ["Barry Moore", "Steve Marshall", "Wes Hudson"],
@@ -100,22 +102,22 @@ RACES = {
 
 
 def prompt(question, default=None):
-    """Prompt with optional default value."""
-    suffix = f" [{default}]" if default else ""
-    response = input(f"{question}{suffix}: ").strip()
+    """Prompt with optional default value. Returns user input or default."""
+    suffix = " [" + default + "]" if default else ""
+    response = input(question + suffix + ": ").strip()
     return response if response else (default or "")
 
 
 def generate_prediction(race_id, predicted_winner, predicted_margin_pts,
-                         winner_probability_pct, predicted_runner_up=None,
-                         confidence_interval_pts=None, notes=None):
+                        winner_probability_pct, predicted_runner_up=None,
+                        confidence_interval_pts=None, notes=None):
     """Build a complete prediction JSON entry."""
     if race_id not in RACES:
-        raise ValueError(f"Unknown race_id: {race_id}. Add it to RACES dict.")
+        raise ValueError("Unknown race_id: " + race_id + ". Add it to RACES dict.")
     race = RACES[race_id]
-
-    # Lock timestamp — UTC ISO 8601
     lock_dt = datetime.now(timezone.utc)
+    race_dt = datetime.fromisoformat(race["race_date"] + "T00:00:00+00:00")
+    days_before = (race_dt - lock_dt).days
 
     return {
         "schema_version": "1.0",
@@ -128,7 +130,7 @@ def generate_prediction(race_id, predicted_winner, predicted_margin_pts,
         "candidates_in_field": race["candidates"],
         "lock_timestamp_utc": lock_dt.isoformat(),
         "lock_date": lock_dt.strftime("%Y-%m-%d"),
-        "days_before_race": (datetime.fromisoformat(race["race_date"] + "T00:00:00+00:00") - lock_dt).days,
+        "days_before_race": days_before,
         "prediction": {
             "predicted_winner": predicted_winner,
             "predicted_runner_up": predicted_runner_up,
@@ -157,34 +159,53 @@ def generate_prediction(race_id, predicted_winner, predicted_margin_pts,
 
 
 def main():
-    print("\n" + "=" * 60)
+    print("")
+    print("=" * 60)
     print("  PULSE INTEL — Lock a Prediction")
-    print("=" * 60 + "\n")
-
-    # Show available races
+    print("=" * 60)
+    print("")
     print("Available races:")
     for rid, r in RACES.items():
-        print(f"  {rid:30s}  resolves {r['race_date']}  ({r['title']})")
-    print()
+        print("  " + rid.ljust(28) + "  resolves " + r["race_date"] + "  (" + r["title"] + ")")
+    print("")
 
     race_id = prompt("Race ID")
     if race_id not in RACES:
-        print(f"\nERROR: '{race_id}' is not a known race. Add it to the RACES dict in this script.")
+        print("")
+        print("ERROR: '" + race_id + "' is not a known race.")
+        print("Valid IDs are listed above. Copy one of those exactly.")
         sys.exit(1)
 
     race = RACES[race_id]
-    print(f"\nRace: {race['title']}")
-    print(f"Field: {', '.join(race['candidates'])}\n")
+    print("")
+    print("Race: " + race["title"])
+    print("Field: " + ", ".join(race["candidates"]))
+    print("")
 
     predicted_winner = prompt("Predicted winner (full name)")
+    if not predicted_winner:
+        print("ERROR: Predicted winner is required.")
+        sys.exit(1)
+
     predicted_runner_up = prompt("Predicted runner-up (full name, optional)", default="")
-    predicted_margin_pts = float(prompt("Predicted margin (in points, e.g. 4.2)"))
-    winner_probability_pct = float(prompt("Winner probability (in %, e.g. 67)"))
+    margin_str = prompt("Predicted margin (in points, e.g. 4.2)")
+    try:
+        predicted_margin_pts = float(margin_str)
+    except ValueError:
+        print("ERROR: Margin must be a number, e.g. 4.2 or 1.30")
+        sys.exit(1)
+
+    prob_str = prompt("Winner probability (in %, e.g. 67)")
+    try:
+        winner_probability_pct = float(prob_str)
+    except ValueError:
+        print("ERROR: Probability must be a number, e.g. 67 or 64.1")
+        sys.exit(1)
+
     ci_str = prompt("Confidence interval +/- pts (optional, e.g. 3.5)", default="")
     confidence_interval_pts = float(ci_str) if ci_str else None
-    notes = prompt("Notes (optional, e.g. 'runoff likely; this is round-1 winner')", default="")
+    notes = prompt("Notes (optional)", default="")
 
-    # Build prediction
     prediction = generate_prediction(
         race_id=race_id,
         predicted_winner=predicted_winner,
@@ -195,28 +216,35 @@ def main():
         notes=notes,
     )
 
-    # Save to predictions/YYYY-MM-DD/{race_id}.json
     out_dir = Path("predictions") / race["race_date"]
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_file = out_dir / f"{race_id}.json"
+    out_file = out_dir / (race_id + ".json")
 
     with open(out_file, "w") as f:
         json.dump(prediction, f, indent=2)
 
-    print(f"\n✓ Wrote {out_file}")
-    print(f"\n  Prediction: {predicted_winner} wins by {predicted_margin_pts:+.1f} pts ({winner_probability_pct:.0f}% probability)")
-    print(f"  Race date: {race['race_date']} ({prediction['days_before_race']} days from lock)")
-    print(f"  Methodology: {METHODOLOGY_VERSION}")
-
-    print("\n" + "=" * 60)
+    print("")
+    print("Wrote " + str(out_file))
+    print("")
+    margin_disp = ("+" if predicted_margin_pts >= 0 else "") + str(predicted_margin_pts)
+    print("  Prediction: " + predicted_winner + " wins by " + margin_disp + " pts (" + str(winner_probability_pct) + "% probability)")
+    print("  Race date: " + race["race_date"] + " (" + str(prediction["days_before_race"]) + " days from lock)")
+    print("  Methodology: " + METHODOLOGY_VERSION)
+    print("")
+    print("=" * 60)
     print("  Next: commit and push to make the prediction public")
-    print("=" * 60 + "\n")
-    print(f"  git add {out_file}")
-    print(f'  git commit -m "Lock {race_id} prediction ({race[\"race_date\"]})"')
-    print(f"  git push")
-    print()
-    print("  After the race resolves, run record_actual.py with the result.")
-    print()
+    print("=" * 60)
+    print("")
+    print("  git add " + str(out_file))
+    commit_msg = "Lock " + race_id + " prediction (" + race["race_date"] + ")"
+    print("  git commit -m \"" + commit_msg + "\"")
+    print("  git push")
+    print("")
+    print("  After all 3 races today, you can do them in one commit:")
+    print("    git add predictions/2026-05-19/")
+    print("    git commit -m \"Lock 2026-05-19 primary predictions: KY, AL, GA Gov\"")
+    print("    git push")
+    print("")
 
 
 if __name__ == "__main__":
