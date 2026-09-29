@@ -1,5 +1,7 @@
 # PULSE INTEL · Public Predictions Registry
 
+> **Disclosure, 2026-09-28:** the three forecasts locked on 2026-05-09 were not produced by the methodology described below. The weights and validation figures on this page describe a model that was never built. See [`DISCLOSURE-2026-09-28.md`](DISCLOSURE-2026-09-28.md) before relying on anything here.
+
 This is a public, append-only record of political forecasts made by **PULSE INTEL**, a bipartisan political analytics platform under development by Jonathan Epstein. Every prediction in this registry was committed to git **before** the corresponding race resolved, with timestamps that anyone can verify against this repo's git history.
 
 ---

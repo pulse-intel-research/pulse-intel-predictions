@@ -1,5 +1,7 @@
 # PULSE INTEL — Primary Forecast Methodology
 
+> **Superseded in part, 2026-09-28.** This document describes a method that was not applied to the forecasts locked on 2026-05-09. See [`DISCLOSURE-2026-09-28.md`](DISCLOSURE-2026-09-28.md).
+
 **Version:** v1-primary-2026
 **Effective:** 2026-04-26 (applies to all primaries locked May 9, 2026 onward)
 **Companion to:** Composite-tuned general-election methodology (v1-composite-tuned)
@@ -166,6 +168,7 @@ These four properties are what differentiate PULSE INTEL from punditry. They hol
 ## Document changelog
 
 - **2026-04-26 v1-primary-2026:** Initial publication. Authored alongside KY Senate GOP primary brief preparation.
+- **2026-09-28:** Superseded in part. None of the adjustments above was applied to the forecasts locked on 2026-05-09, and the coefficients and validation figures above were never used to compute any forecast. See [`DISCLOSURE-2026-09-28.md`](DISCLOSURE-2026-09-28.md).
 
 ---
 
