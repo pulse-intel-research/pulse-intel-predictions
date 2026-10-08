@@ -1,0 +1,720 @@
+{
+  "schema_version": "2.0",
+  "race_id": "tx-sen-gen",
+  "race_title": "Texas Senate 2026 — general election",
+  "race_date": "2026-11-03",
+  "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+  "forecast_as_of": "2026-10-07",
+  "methodology_version": "v61.40",
+  "method": "recency-weighted polling average with historical-error intervals",
+  "build": {
+    "file": "pulse-intel-v6140.html",
+    "sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+  },
+  "prediction": {
+    "candidate_c0": "Ken Paxton (R)",
+    "candidate_c1": "James Talarico (D)",
+    "predicted_winner": "James Talarico",
+    "margin_c0_minus_c1_pts": -2.74,
+    "win_probability_c0_pct": 27.9,
+    "win_probability_predicted_winner_pct": 72.1,
+    "sigma_pts": 4.67,
+    "sigma_floor": {
+      "value": 4.67,
+      "label": "historical polling-average error",
+      "source": "BACKTEST_LIBRARY_538.metrics.mae (730 Senate + Governor generals, 1998–2022)",
+      "binding": true,
+      "note": "Floor binds: σ = 4.67, so win probability = Φ(margin / 4.67)."
+    },
+    "combined_sigma_before_floor": 2.2,
+    "margin_interval_80": {
+      "low": -8.73,
+      "high": 3.25
+    },
+    "margin_interval_95": {
+      "low": -11.89,
+      "high": 6.41
+    }
+  },
+  "weights": {
+    "polls": 1
+  },
+  "calibration": "not applied",
+  "momentum": "disabled",
+  "inputs": {
+    "polls": {
+      "raw_n": 27,
+      "effective_n": 14.41627639302054,
+      "confidence": 0.95,
+      "average_c0": 45.02,
+      "average_c1": 47.75,
+      "margin": -2.74,
+      "sigma": 2.2,
+      "recency": {
+        "method": "date",
+        "halfLifeDays": 30,
+        "asOf": "2026-10-07"
+      },
+      "house_effect_correction": "off",
+      "quality_multiplier": "removed",
+      "ingest": {
+        "in_snapshot": 32,
+        "excluded_partisan_or_internal": 5,
+        "excluded_partisan_list": [
+          {
+            "pollster": "Public Policy Polling",
+            "date": "2026-03-05",
+            "partisan": "DEM",
+            "internal": false
+          },
+          {
+            "pollster": "Public Policy Polling",
+            "date": "2026-05-23",
+            "partisan": "DEM",
+            "internal": false
+          },
+          {
+            "pollster": "Slingshot Strategies",
+            "date": "2026-05-28",
+            "partisan": "DEM",
+            "internal": false
+          },
+          {
+            "pollster": "SoCal Strategies",
+            "date": "2026-06-21",
+            "partisan": "REP",
+            "internal": false
+          },
+          {
+            "pollster": "YouGov Blue",
+            "date": "2026-07-31",
+            "partisan": "DEM",
+            "internal": false
+          }
+        ],
+        "population_duplicates_dropped": 0,
+        "missing_share_dropped": 0,
+        "used": 27,
+        "snapshot_vintage": "2026-10-07T02:42:11.186898Z"
+      },
+      "polls_used": [
+        {
+          "pollster": "Beacon Research/Shaw & Co. Research",
+          "date": "2026-09-28",
+          "sourceId": "us-202beab9600d9b",
+          "n": 881,
+          "population": "lv",
+          "c0": 49,
+          "c1": 51,
+          "moe": 3.302,
+          "ageDays": 9,
+          "recencyW": 0.8122523963562356,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.8122523963562356
+        },
+        {
+          "pollster": "Slingshot Strategies",
+          "date": "2026-09-22",
+          "sourceId": "us-202sli284b821d",
+          "n": 1007,
+          "population": "lv",
+          "c0": 45,
+          "c1": 49,
+          "moe": 3.088,
+          "ageDays": 15,
+          "recencyW": 0.7071067811865476,
+          "gradeW": 1,
+          "w538": 0.63,
+          "weight": 0.44547727214752497
+        },
+        {
+          "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+          "date": "2026-09-19",
+          "sourceId": "us-202tex6938a787",
+          "n": 1800,
+          "population": "lv",
+          "c0": 46,
+          "c1": 47,
+          "moe": 2.31,
+          "ageDays": 18,
+          "recencyW": 0.6597539553864471,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.6597539553864471
+        },
+        {
+          "pollster": "Emerson College",
+          "date": "2026-09-14",
+          "sourceId": "us-202emee56d4394",
+          "n": 1000,
+          "population": "lv",
+          "c0": 46,
+          "c1": 47,
+          "moe": 3.099,
+          "ageDays": 23,
+          "recencyW": 0.5877739531418044,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.5877739531418044
+        },
+        {
+          "pollster": "ReconMR/Siena University",
+          "date": "2026-09-11",
+          "sourceId": "us-202rec85c5cf76",
+          "n": 614,
+          "population": "lv",
+          "c0": 43,
+          "c1": 49,
+          "moe": 3.955,
+          "ageDays": 26,
+          "recencyW": 0.548412489847313,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.548412489847313
+        },
+        {
+          "pollster": "InsiderAdvantage",
+          "date": "2026-09-09",
+          "sourceId": "us-202ins8df69531",
+          "n": 1200,
+          "population": "lv",
+          "c0": 45.6,
+          "c1": 47.1,
+          "moe": 2.829,
+          "ageDays": 28,
+          "recencyW": 0.5236470614103134,
+          "gradeW": 1,
+          "w538": 0.77,
+          "weight": 0.4032082372859413
+        },
+        {
+          "pollster": "YouGov",
+          "date": "2026-09-04",
+          "sourceId": "us-202youc39ac53a",
+          "n": 1000,
+          "population": "rv",
+          "c0": 43,
+          "c1": 48,
+          "moe": 3.099,
+          "ageDays": 33,
+          "recencyW": 0.4665164957684037,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.4665164957684037
+        },
+        {
+          "pollster": "Fabrizio Ward/Impact Research",
+          "date": "2026-09-01",
+          "sourceId": "us-202fab22efb6bc",
+          "n": 895,
+          "population": "lv",
+          "c0": 44,
+          "c1": 48,
+          "moe": 3.276,
+          "ageDays": 36,
+          "recencyW": 0.43527528164806206,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.43527528164806206
+        },
+        {
+          "pollster": "Slingshot Strategies",
+          "date": "2026-08-24",
+          "sourceId": "us-202sli394bd9a0",
+          "n": 1000,
+          "population": "lv",
+          "c0": 42,
+          "c1": 48,
+          "moe": 3.099,
+          "ageDays": 44,
+          "recencyW": 0.36181730936009454,
+          "gradeW": 1,
+          "w538": 0.63,
+          "weight": 0.22794490489685956
+        },
+        {
+          "pollster": "The Texas Politics Project at the University of Texas at Austin/YouGov",
+          "date": "2026-08-13",
+          "sourceId": "us-202the54ba4671",
+          "n": 1218,
+          "population": "rv",
+          "c0": 39,
+          "c1": 42,
+          "moe": 2.808,
+          "ageDays": 55,
+          "recencyW": 0.28061551207734325,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.28061551207734325
+        },
+        {
+          "pollster": "Emerson College",
+          "date": "2026-08-10",
+          "sourceId": "us-202eme5bcac049",
+          "n": 1000,
+          "population": "lv",
+          "c0": 47,
+          "c1": 46,
+          "moe": 3.099,
+          "ageDays": 58,
+          "recencyW": 0.2618235307051567,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.2618235307051567
+        },
+        {
+          "pollster": "Wedgewood Polls",
+          "date": "2026-07-31",
+          "sourceId": "us-202wed4dcf8c6b",
+          "n": 800,
+          "population": "lv",
+          "c0": 46,
+          "c1": 48,
+          "moe": 3.465,
+          "ageDays": 68,
+          "recencyW": 0.20780947403569694,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.20780947403569694
+        },
+        {
+          "pollster": "ReconMR/Siena University",
+          "date": "2026-07-30",
+          "sourceId": "us-202rec773da2d7",
+          "n": 619,
+          "population": "lv",
+          "c0": 43,
+          "c1": 47,
+          "moe": 3.939,
+          "ageDays": 69,
+          "recencyW": 0.2030630990890589,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.2030630990890589
+        },
+        {
+          "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+          "date": "2026-07-30",
+          "sourceId": "us-202texee0a6ae6",
+          "n": 1200,
+          "population": "lv",
+          "c0": 45,
+          "c1": 47,
+          "moe": 2.829,
+          "ageDays": 69,
+          "recencyW": 0.2030630990890589,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.2030630990890589
+        },
+        {
+          "pollster": "Beacon Research/Shaw & Co. Research",
+          "date": "2026-07-27",
+          "sourceId": "us-202bea54820d8d",
+          "n": 1006,
+          "population": "rv",
+          "c0": 48,
+          "c1": 51,
+          "moe": 3.09,
+          "ageDays": 72,
+          "recencyW": 0.18946457081379978,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.18946457081379978
+        },
+        {
+          "pollster": "Slingshot Strategies",
+          "date": "2026-07-17",
+          "sourceId": "us-202sli6204659f",
+          "n": 1048,
+          "population": "lv",
+          "c0": 40,
+          "c1": 45,
+          "moe": 3.027,
+          "ageDays": 82,
+          "recencyW": 0.15037812951026458,
+          "gradeW": 1,
+          "w538": 0.63,
+          "weight": 0.09473822159146669
+        },
+        {
+          "pollster": "A2 Insights",
+          "date": "2026-06-28",
+          "sourceId": "us-202a2 1a5590cb",
+          "n": 618,
+          "population": "lv",
+          "c0": 46.1,
+          "c1": 48.4,
+          "moe": 3.942,
+          "ageDays": 101,
+          "recencyW": 0.09694654761460841,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.09694654761460841
+        },
+        {
+          "pollster": "The New York Times/Siena University",
+          "date": "2026-06-27",
+          "sourceId": "us-202thee89c7bce",
+          "n": 656,
+          "population": "lv",
+          "c0": 47,
+          "c1": 47,
+          "moe": 3.826,
+          "ageDays": 102,
+          "recencyW": 0.09473228540689989,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.09473228540689989
+        },
+        {
+          "pollster": "Texas Politics Project at the University of Texas/YouGov",
+          "date": "2026-06-12",
+          "sourceId": "us-202texc8fd4814",
+          "n": 1200,
+          "population": "rv",
+          "c0": 43,
+          "c1": 42,
+          "moe": 2.829,
+          "ageDays": 117,
+          "recencyW": 0.06698584140851832,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.06698584140851832
+        },
+        {
+          "pollster": "Quantus Insights",
+          "date": "2026-06-04",
+          "sourceId": "us-202qua6b878295",
+          "n": 800,
+          "population": "lv",
+          "c0": 45,
+          "c1": 43,
+          "moe": 3.465,
+          "ageDays": 125,
+          "recencyW": 0.0556811698837712,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.0556811698837712
+        },
+        {
+          "pollster": "ReconMR/Siena University",
+          "date": "2026-06-04",
+          "sourceId": "us-202rec22b1c62b",
+          "n": 807,
+          "population": "lv",
+          "c0": 44,
+          "c1": 47,
+          "moe": 3.45,
+          "ageDays": 125,
+          "recencyW": 0.0556811698837712,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.0556811698837712
+        },
+        {
+          "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+          "date": "2026-05-06",
+          "sourceId": "us-202texc28cf835",
+          "n": 1223,
+          "population": "lv",
+          "c0": 45,
+          "c1": 45,
+          "moe": 2.802,
+          "ageDays": 154,
+          "recencyW": 0.028491327767444268,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.028491327767444268
+        },
+        {
+          "pollster": "Texas Public Opinion Research",
+          "date": "2026-04-20",
+          "sourceId": "us-202texe500a6d5",
+          "n": 1018,
+          "population": "lv",
+          "c0": 41,
+          "c1": 46,
+          "moe": 3.072,
+          "ageDays": 170,
+          "recencyW": 0.01968626640460739,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.01968626640460739
+        },
+        {
+          "pollster": "YouGov",
+          "date": "2026-04-20",
+          "sourceId": "us-202you9dee520f",
+          "n": 1200,
+          "population": "rv",
+          "c0": 34,
+          "c1": 42,
+          "moe": 2.829,
+          "ageDays": 170,
+          "recencyW": 0.01968626640460739,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.01968626640460739
+        },
+        {
+          "pollster": "Impact Research",
+          "date": "2026-03-17",
+          "sourceId": "us-202imp50137db2",
+          "n": 900,
+          "population": "lv",
+          "c0": 43,
+          "c1": 44,
+          "moe": 3.267,
+          "ageDays": 204,
+          "recencyW": 0.008974205898414337,
+          "gradeW": 1,
+          "w538": 0.73,
+          "weight": 0.006551170305842465
+        },
+        {
+          "pollster": "University of Houston/YouGov",
+          "date": "2026-01-31",
+          "sourceId": "us-202uni0dc518c7",
+          "n": 1502,
+          "population": "lv",
+          "c0": 46,
+          "c1": 44,
+          "moe": 2.529,
+          "ageDays": 249,
+          "recencyW": 0.0031728609232665435,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.0031728609232665435
+        },
+        {
+          "pollster": "Emerson College",
+          "date": "2026-01-12",
+          "sourceId": "us-202emeef7cbc1d",
+          "n": 1165,
+          "population": "rv",
+          "c0": 45.6,
+          "c1": 45.6,
+          "moe": 2.871,
+          "ageDays": 268,
+          "recencyW": 0.002045496333634036,
+          "gradeW": 1,
+          "w538": 1,
+          "weight": 0.002045496333634036
+        }
+      ]
+    },
+    "not_used": {
+      "fundamentals": "Not used: the fundamentals coefficients are hand-set and were never validated, and the sub-model has no state partisan-lean term, so it applies the same national shift to every race. Its inputs (FRED unemployment, approval, generic ballot) are archived as collected, not used.",
+      "expert": "Not used: no expert ratings are held for 2026 general elections.",
+      "sentiment": "Not used: no live sentiment feed exists; the platform's sentiment values are simulated.",
+      "live": "Not used: no SMS poll data."
+    },
+    "collected_not_used": {
+      "approval": {
+        "value": 35,
+        "date": "2026-10-06",
+        "source": "FiftyPlusOne presidential approval average, Oct 6 2026: Approve 35.0%, Disapprove 61.9% — saved copy data/political_snapshots/2026-10-06/fiftyplusone-approval-president.html, SHA-256 b228ce8f2525d8fca1d707423b461b4eeb9d61bb6ec80aca6c3bf22fa0ce9bb6, fetched 2026-10-07T03:04:09Z",
+        "spread": [
+          35,
+          37.3
+        ]
+      },
+      "generic_ballot": {
+        "d_lead": 7.7,
+        "date": "2026-10-06",
+        "source": "FiftyPlusOne generic ballot average, Oct 6 2026: Democrats 51.1%, Republicans 43.4% (D+7.7 = 51.1 − 43.4; the page headline rounds it to \"Democrats +8\") — saved copy data/political_snapshots/2026-10-06/fiftyplusone-generic-ballot.html, SHA-256 28d1d21d831ed4e6770ccb4c5af48f3ff500a8b8cb57fd70a9d57c85131b5024, fetched 2026-10-07T03:04:14Z",
+        "spread": [
+          7.7,
+          9.6
+        ]
+      },
+      "fred_snapshot": "data/fred_snapshot.json (hash in input_files)",
+      "incumbency": {
+        "context": "general",
+        "is_incumbent_race": false,
+        "incumbent_party": "rep",
+        "source": "Officeholder: Sen. John Cornyn (R) — not among the nominees. Party held: R. Nominee field and incumbency per WK_GENERALS.sourcing: Ballotpedia News; corroborated by Al Jazeera, Houston Public Media. Verified 2026-09-14."
+      }
+    }
+  },
+  "eligibility": {
+    "rule": {
+      "minPolls": 8,
+      "maxNewestAgeDays": 45,
+      "twoWayRequired": [
+        "me-sen-gen"
+      ]
+    },
+    "result": {
+      "id": "tx-sen-gen",
+      "polls": 27,
+      "newest": "2026-09-28",
+      "newestAgeDays": 9,
+      "passPolls": true,
+      "passRecency": true,
+      "twoWay": null,
+      "eligible": true,
+      "reasons": []
+    }
+  },
+  "predState_defaults": {
+    "pollingEnabled": true,
+    "pollRecency": 3,
+    "pollWeight": 35,
+    "activePollSources": [
+      "DataEdge",
+      "eco",
+      "emerson",
+      "fox",
+      "nyt",
+      "quin",
+      "rcp",
+      "votehub"
+    ]
+  },
+  "input_files": [
+    {
+      "path": "pulse-intel-v6140.html",
+      "role": "build",
+      "sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/MANIFEST.json",
+      "role": "VoteHub raw-response manifest",
+      "sha256": "3a229c1f84ab11f325912c5cb3901cc77eb377ddfea9b876fa75d9daf5169f2a"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/mi-sen-gen.json",
+      "role": "VoteHub raw /polls response, mi-sen-gen",
+      "sha256": "91848a5bfcc7512751bcdc45e16a1f9d19d0fb9bca21bdded6dac37f27aa45e0"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/me-sen-gen.json",
+      "role": "VoteHub raw /polls response, me-sen-gen",
+      "sha256": "912748385c9ccfb4b21394477dc236b48240ed48d50c415297ab9d3c5174ee14"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/nc-sen-gen.json",
+      "role": "VoteHub raw /polls response, nc-sen-gen",
+      "sha256": "a363486742764cb9f05dd6c29fd36072bfb3024b3400c62e8c2eee3b1f66cb2f"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/oh-sen-gen.json",
+      "role": "VoteHub raw /polls response, oh-sen-gen",
+      "sha256": "587ef091ced1c7a43df7af03208a7c11e2c9d11d8a482de10b3709d55e139922"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/ga-sen-gen.json",
+      "role": "VoteHub raw /polls response, ga-sen-gen",
+      "sha256": "447a0b756473ca855728618a1af2156a5dcd22b9e216175ec539156a5cb3a549"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/ia-sen-gen.json",
+      "role": "VoteHub raw /polls response, ia-sen-gen",
+      "sha256": "25cd815be0bf45396ebe6dc1eb75b3c58ad86b0adee93b516fcf723169918114"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/tx-sen-gen.json",
+      "role": "VoteHub raw /polls response, tx-sen-gen",
+      "sha256": "1a2da83b5a32606e9292fe17e966f964bb3895ea895d936fdc675e7a59b7eb24"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/nh-sen-gen.json",
+      "role": "VoteHub raw /polls response, nh-sen-gen",
+      "sha256": "fd6ce1a95163d335595093f4b9e151914f036bc306df62c0c14327dd4e19820d"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/mn-sen-gen.json",
+      "role": "VoteHub raw /polls response, mn-sen-gen",
+      "sha256": "9101ace618d38a0a57a1f4b89a9bb2c653f970893c577deb409d3bd443ff0268"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/az-gov-gen.json",
+      "role": "VoteHub raw /polls response, az-gov-gen",
+      "sha256": "944d1c1cf13b6ac9ce4af7deb97f5f4462742c1b953adab337ad2c9d09b0b054"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/mi-gov-gen.json",
+      "role": "VoteHub raw /polls response, mi-gov-gen",
+      "sha256": "f07f8c09ad280cfba6f24358e5a604aebdda619c3e7b3cc045dd02a853a3d219"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/nv-gov-gen.json",
+      "role": "VoteHub raw /polls response, nv-gov-gen",
+      "sha256": "805e42ae0161fc2d8ce1da544f77691b110df9d4c037bd9857badf56c3a92b0a"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/wi-gov-gen.json",
+      "role": "VoteHub raw /polls response, wi-gov-gen",
+      "sha256": "61b54f4b701568cf5ba974c986ed4e74123c6aa0d98fc5562da9eed22da24646"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/ia-gov-gen.json",
+      "role": "VoteHub raw /polls response, ia-gov-gen",
+      "sha256": "eb1cee1f7a672ced577265968a863b67e081cbe090d63ea2ab7a297eec776d0e"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/ga-gov-gen.json",
+      "role": "VoteHub raw /polls response, ga-gov-gen",
+      "sha256": "094bd40021f40eff37ebd1ccf3fe715d63dcf726e7f3fdb4cde80c1b0722c929"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/ks-gov-gen.json",
+      "role": "VoteHub raw /polls response, ks-gov-gen",
+      "sha256": "830f0a5a6f3b39177de6155e356fbdd02f9becf218f8ba95361696cadc22fa9e"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/me-gov-gen.json",
+      "role": "VoteHub raw /polls response, me-gov-gen",
+      "sha256": "2064bbda5511b8582e662969e8d22ab2642749091318f00d3d415115e6bd9460"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/fl-gov-gen.json",
+      "role": "VoteHub raw /polls response, fl-gov-gen",
+      "sha256": "bb39eea2b618ddd48cc31855d8c755bdc36dc699d39034383cb10a92a8027799"
+    },
+    {
+      "path": "data/votehub_raw/2026-10-07T024211/mn-gov-gen.json",
+      "role": "VoteHub raw /polls response, mn-gov-gen",
+      "sha256": "bc3ea8f5998efe46bb9762dca4696d01de5b643034d941f052b30c6dec978e8f"
+    },
+    {
+      "path": "votehub_polls.json",
+      "role": "VoteHub processed snapshot",
+      "sha256": "2ec480b08eed887ca39441cd55b35c904c1443b67e3a09cc0f1d900a11dba097"
+    },
+    {
+      "path": "data/fred_snapshot.json",
+      "role": "FRED snapshot",
+      "sha256": "5432c338fc64229692e37ce5bbaac24c671f0bddd6f86ea02970eb091a2a2e69"
+    },
+    {
+      "path": "data/political_snapshots/2026-10-06/MANIFEST.json",
+      "role": "political snapshots manifest",
+      "sha256": "d2155cbbededfe811e2b01b00dd561923d5d73d5f7defba77834db54af973f17"
+    },
+    {
+      "path": "data/political_snapshots/2026-10-06/fiftyplusone-approval-president.html",
+      "role": "saved aggregator page (trump_approval_national)",
+      "sha256": "b228ce8f2525d8fca1d707423b461b4eeb9d61bb6ec80aca6c3bf22fa0ce9bb6"
+    },
+    {
+      "path": "data/political_snapshots/2026-10-06/fiftyplusone-generic-ballot.html",
+      "role": "saved aggregator page (generic_ballot)",
+      "sha256": "28d1d21d831ed4e6770ccb4c5af48f3ff500a8b8cb57fd70a9d57c85131b5024"
+    },
+    {
+      "path": "data/538/pollster-ratings__pollster-ratings-combined.csv",
+      "role": "538 pollster ratings (POLLSCORE)",
+      "sha256": "75215795f59d6dd9c725c794b2222db140048aff27510847d1c5b145af3c04ef"
+    },
+    {
+      "path": "data/538/pollster-ratings__2023__pollster-ratings.csv",
+      "role": "538 pollster ratings (letter grades)",
+      "sha256": "8501615e7bff043dd3ed0452b875a93f519cec546c190a5d0a462272c387d923"
+    }
+  ],
+  "actual_result_pending": true
+}

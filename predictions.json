@@ -1,7 +1,96 @@
 {
   "schema_version": "1.0",
   "registry_index": "Index of all locked predictions in this registry. Per-race files live in /predictions/YYYY-MM-DD/{race_id}.json.",
-  "predictions_locked": [],
+  "predictions_locked": [
+    {
+      "race_id": "mi-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/mi-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "nc-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/nc-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "oh-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/oh-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "ia-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/ia-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "tx-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/tx-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "nh-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/nh-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "ia-gov-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/ia-gov-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "fl-gov-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/fl-gov-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "ga-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/ga-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "ga-gov-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/ga-gov-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    },
+    {
+      "race_id": "me-sen-gen",
+      "race_date": "2026-11-03",
+      "lock_timestamp_utc": "2026-10-08T03:40:41.902Z",
+      "methodology_version": "v61.40",
+      "file": "predictions/2026-11-03/me-sen-gen.json",
+      "build_sha256": "acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6"
+    }
+  ],
   "actuals_recorded": [],
-  "last_updated_utc": "2026-05-09T00:00:00Z"
+  "last_updated_utc": "2026-10-08T03:40:41.902Z"
 }
