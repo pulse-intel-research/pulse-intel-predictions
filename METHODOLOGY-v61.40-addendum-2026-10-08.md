@@ -43,3 +43,7 @@ At T−7 and T−14, 23 and 155 races had no poll yet and are not scored. At T�
 ## Also noted
 
 The 538 library's provenance text says `avg_poll_margin` is rounded to 1 decimal place. 390 of its 730 rows are stored to 2, with exact halves rounded half-to-even. Every row agrees with the raw polls at its stored precision. This affects no number in the forecasts.
+
+## Correction, 2026-10-08
+
+In the "Locked forecasts" table of [METHODOLOGY-v61.40.md](METHODOLOGY-v61.40.md), the Margin column shows the predicted winner's margin, while the interval columns are c0 − c1, as stored in the lock records (`margin_c0_minus_c1_pts`, `margin_interval_80`, `margin_interval_95`). The table's footnote says both are c0 − c1. The lock records themselves are consistent and unchanged.
