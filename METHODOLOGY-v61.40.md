@@ -10,6 +10,8 @@ Every number in the lock records below is computed by `ensemblePredict()` in tha
 
 **These forecasts are not validated by the platform's 73-race backtest.** That backtest ran a different configuration — a multi-input ensemble with fundamentals, sentiment, expert ratings and momentum, a positional recency decay, and no σ floor of this kind — on 2016–2024 races. It does not validate these calls. The σ floor (4.67) is the historical error of a simple polling average on 730 Senate and Governor generals (1998–2022); it is a floor on uncertainty, not a measure of this method's accuracy.
 
+**Addendum, 2026-10-08:** [walk-forward backtest of this method](METHODOLOGY-v61.40-addendum-2026-10-08.md) on those 730 races. Its 80% and 95% intervals held the actual result 70.8% and 88.9% of the time the day before the election. The lock records below are unchanged and will be scored as locked; their intervals are expected to be too narrow.
+
 ## The method
 
 - **Input:** polls only (VoteHub, vintage 2026-10-07T02:42:11.186898Z). Partisan-sponsored and internal polls are excluded; one row is kept per fielding (LV preferred); a poll must give a number for both principal candidates.
