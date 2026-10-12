@@ -46,7 +46,7 @@ Each record also holds the margin as first-named minus second-named candidate, �
 - the definitions (actual margin in points of all votes cast, winner call, error, range coverage, Brier score);
 - the totals.
 
-It pins the scorer, `score_generals_2026.py` in the platform repository, by its SHA-256. It will not be edited after the polls close; a change would be a new dated file, with both sets of scores published.
+It pins the scorer, `score_generals_2026.py`, by its SHA-256; a copy is in [`verify/`](verify/). It will not be edited after the polls close; a change would be a new dated file, with both sets of scores published.
 
 ## Disclosure
 
@@ -64,23 +64,29 @@ For the races it shares with the 11 above, the v61.40 locks are the only registe
 
 **That a record is unchanged.** `shasum -a 256 predictions/2026-11-03/*.json` should match the hashes listed in `SCORING-2026-GENERALS.md`.
 
-**Reproduce a lock.** The locked build and every input it used are in the platform repository, `pulse-intel-research/pulse-intel-prototype`. Clone it, clone this registry inside it as `pulse-intel-predictions/`, then:
+**Reproduce the locks.** Everything needed is in [`verify/`](verify/): copies of the input files the records cite, byte for byte (credited in [`verify/ATTRIBUTION.md`](verify/ATTRIBUTION.md)), and a standalone script, Python 3 standard library only. From the registry root:
 
 ```sh
-cd harnesses && npm install && cd ..
-node reproduce_locks_v6140.js
+python3 verify/reproduce_locks.py
 ```
 
-It checks the build's SHA-256, loads the build, recomputes each race with `ensemblePredict(race_id)`, and compares the predicted winner, margin, win probabilities, σ and both ranges with the record, field by field. It writes nothing. Each input file's hash is in its lock record's `input_files`.
+It first checks every input against the SHA-256 in the lock records, and the raw VoteHub responses against their manifest. It then recomputes each race from the inputs with the v61.40 method as `METHODOLOGY-v61.40.md` states it. It compares the leader, margin, win probability and both ranges with the record at stored precision, prints MATCH or MISMATCH per race, and exits non-zero on any mismatch. It writes nothing.
 
-**Run the scorer.** After the results are certified, each goes in the platform repository's `data/results_2026/<race_id>.json`, with the certified source document saved and hashed. The format is in `SCORING-2026-GENERALS.md`. Then:
+Each lock record also pins the SHA-256 of the platform build that produced it (`pulse-intel-v6140.html`, `acca9337…5ba7bb6`). The build itself is not public, so the script recomputes the locks from their inputs rather than from the build. Two other cited files, saved copies of a third party's web pages that no forecast uses, are not redistributed; their hashes are in `verify/ATTRIBUTION.md`.
+
+**Run the scorer.** [`verify/score_generals_2026.py`](verify/score_generals_2026.py) is a byte-identical copy of the scorer that `SCORING-2026-GENERALS.md` pins. First check that it is that file:
 
 ```sh
-shasum -a 256 score_generals_2026.py      # must equal the hash pinned in SCORING-2026-GENERALS.md
-python3 score_generals_2026.py --json scores.json
+shasum -a 256 verify/score_generals_2026.py
 ```
 
-It refuses any race without a certified result, or whose lock record doesn't match its pinned hash, and says why. Until then, `node harnesses/17-scoring-v6147.js` runs it on labelled test fixtures and recomputes every number.
+The output must be `2968815203484b8bd90c3636caa09563a24441ce1e80cfa7677d8acafc946b5e`, the hash in `SCORING-2026-GENERALS.md`. After the results are certified, put one result file per race in `results_2026/` at the registry root. The format is in `SCORING-2026-GENERALS.md`: each file is `<race_id>.json`, and the certified source documents go in `results_2026/sources/` with their SHA-256 in the result file. Then, from the registry root:
+
+```sh
+python3 verify/score_generals_2026.py --locks-dir predictions/2026-11-03 --results-dir results_2026 --json scores.json
+```
+
+The two flags are needed because the script's built-in defaults are the platform repository's layout. It refuses any race without a certified result, or whose lock record doesn't match its pinned hash, and says why. Until there are results, every race is reported as not scored.
 
 ## Older files
 
@@ -88,7 +94,7 @@ These are kept unchanged, because the registry is append-only, and are supersede
 
 - `predictions/2026-05-19/`: the three May primary records covered by the disclosure.
 - `PRIMARY_METHODOLOGY.md`: the primary methodology published with them. The disclosure supersedes it.
-- `lock_prediction.py`: the interactive tool used for those locks. Its docstring describes the withdrawn method. The 11 general-election records were written by `lock_generals_v6140.js` in the platform repository.
+- `lock_prediction.py`: the interactive tool used for those locks. Its docstring describes the withdrawn method. The 11 general-election records were written by the platform's lock script.
 - `real_polls.json`: polls curated by hand in April 2026. No current forecast uses it.
 
 ## Append-only

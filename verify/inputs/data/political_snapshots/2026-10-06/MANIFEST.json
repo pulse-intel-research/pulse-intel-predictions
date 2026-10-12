@@ -1,0 +1,35 @@
+{
+  "usage": "collected, not used \u2014 the 2026 general-election forecasts in v61.40 do not run the fundamentals sub-model (hand-set, unvalidated coefficients; no state partisan-lean term). Kept as the archived record of the approved values.",
+  "source": "FiftyPlusOne (fiftyplusone.news)",
+  "note": "Raw HTML as served, saved with curl. Figures were read from these saved files (visible text after removing script/style), not from a summarizer. fetchedAt is the UTC clock read immediately after each download completed.",
+  "files": {
+    "fiftyplusone-approval-president.html": {
+      "url": "https://fiftyplusone.news/polls/approval/president",
+      "fetchedAt": "2026-10-07T03:04:09Z",
+      "figure": {
+        "series": "trump_approval_national",
+        "asOfOnPage": "Oct 6, 2026",
+        "approve": 35.0,
+        "disapprove": 61.9,
+        "verbatim": "Oct 6, 2026 Disapprove +27 Disapprove 61.9% Approve 35.0%"
+      },
+      "bytes": 395158,
+      "sha256": "b228ce8f2525d8fca1d707423b461b4eeb9d61bb6ec80aca6c3bf22fa0ce9bb6"
+    },
+    "fiftyplusone-generic-ballot.html": {
+      "url": "https://fiftyplusone.news/polls/generic-ballot/generic-ballot",
+      "fetchedAt": "2026-10-07T03:04:14Z",
+      "figure": {
+        "series": "generic_ballot",
+        "asOfOnPage": "Oct 6, 2026",
+        "dem": 51.1,
+        "rep": 43.4,
+        "d_lead": 7.7,
+        "d_lead_note": "51.1 - 43.4; the page headline rounds this to \"Democrats +8\"",
+        "verbatim": "Oct 6, 2026 Democrats +8 Democrats 51.1% Republicans 43.4%"
+      },
+      "bytes": 370377,
+      "sha256": "28d1d21d831ed4e6770ccb4c5af48f3ff500a8b8cb57fd70a9d57c85131b5024"
+    }
+  }
+}

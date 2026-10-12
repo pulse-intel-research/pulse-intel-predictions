@@ -1,0 +1,145 @@
+{
+  "files": {
+    "mi-sen-gen": {
+      "file": "mi-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Michigan",
+      "fetchedAt": "2026-10-07T02:42:11.734398Z",
+      "bytes": 33617,
+      "sha256": "91848a5bfcc7512751bcdc45e16a1f9d19d0fb9bca21bdded6dac37f27aa45e0"
+    },
+    "me-sen-gen": {
+      "file": "me-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Maine",
+      "fetchedAt": "2026-10-07T02:42:12.417917Z",
+      "bytes": 21690,
+      "sha256": "912748385c9ccfb4b21394477dc236b48240ed48d50c415297ab9d3c5174ee14"
+    },
+    "nc-sen-gen": {
+      "file": "nc-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+North+Carolina",
+      "fetchedAt": "2026-10-07T02:42:13.090705Z",
+      "bytes": 19666,
+      "sha256": "a363486742764cb9f05dd6c29fd36072bfb3024b3400c62e8c2eee3b1f66cb2f"
+    },
+    "oh-sen-gen": {
+      "file": "oh-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Ohio",
+      "fetchedAt": "2026-10-07T02:42:13.708405Z",
+      "bytes": 10114,
+      "sha256": "587ef091ced1c7a43df7af03208a7c11e2c9d11d8a482de10b3709d55e139922"
+    },
+    "ga-sen-gen": {
+      "file": "ga-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Georgia",
+      "fetchedAt": "2026-10-07T02:42:14.319400Z",
+      "bytes": 8676,
+      "sha256": "447a0b756473ca855728618a1af2156a5dcd22b9e216175ec539156a5cb3a549"
+    },
+    "ia-sen-gen": {
+      "file": "ia-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Iowa",
+      "fetchedAt": "2026-10-07T02:42:15.113645Z",
+      "bytes": 8371,
+      "sha256": "25cd815be0bf45396ebe6dc1eb75b3c58ad86b0adee93b516fcf723169918114"
+    },
+    "tx-sen-gen": {
+      "file": "tx-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Texas",
+      "fetchedAt": "2026-10-07T02:42:15.912633Z",
+      "bytes": 44413,
+      "sha256": "1a2da83b5a32606e9292fe17e966f964bb3895ea895d936fdc675e7a59b7eb24"
+    },
+    "nh-sen-gen": {
+      "file": "nh-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+New+Hampshire",
+      "fetchedAt": "2026-10-07T02:42:16.515742Z",
+      "bytes": 11141,
+      "sha256": "fd6ce1a95163d335595093f4b9e151914f036bc306df62c0c14327dd4e19820d"
+    },
+    "mn-sen-gen": {
+      "file": "mn-sen-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=us-senator&subject=2026+Minnesota",
+      "fetchedAt": "2026-10-07T02:42:17.134680Z",
+      "bytes": 4262,
+      "sha256": "9101ace618d38a0a57a1f4b89a9bb2c653f970893c577deb409d3bd443ff0268"
+    },
+    "az-gov-gen": {
+      "file": "az-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Arizona",
+      "fetchedAt": "2026-10-07T02:42:17.736834Z",
+      "bytes": 9604,
+      "sha256": "944d1c1cf13b6ac9ce4af7deb97f5f4462742c1b953adab337ad2c9d09b0b054"
+    },
+    "mi-gov-gen": {
+      "file": "mi-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Michigan",
+      "fetchedAt": "2026-10-07T02:42:18.335289Z",
+      "bytes": 9701,
+      "sha256": "f07f8c09ad280cfba6f24358e5a604aebdda619c3e7b3cc045dd02a853a3d219"
+    },
+    "nv-gov-gen": {
+      "file": "nv-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Nevada",
+      "fetchedAt": "2026-10-07T02:42:19.036773Z",
+      "bytes": 2909,
+      "sha256": "805e42ae0161fc2d8ce1da544f77691b110df9d4c037bd9857badf56c3a92b0a"
+    },
+    "wi-gov-gen": {
+      "file": "wi-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Wisconsin",
+      "fetchedAt": "2026-10-07T02:42:19.634142Z",
+      "bytes": 13104,
+      "sha256": "61b54f4b701568cf5ba974c986ed4e74123c6aa0d98fc5562da9eed22da24646"
+    },
+    "ia-gov-gen": {
+      "file": "ia-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Iowa",
+      "fetchedAt": "2026-10-07T02:42:20.234496Z",
+      "bytes": 7327,
+      "sha256": "eb1cee1f7a672ced577265968a863b67e081cbe090d63ea2ab7a297eec776d0e"
+    },
+    "ga-gov-gen": {
+      "file": "ga-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Georgia",
+      "fetchedAt": "2026-10-07T02:42:20.824024Z",
+      "bytes": 7608,
+      "sha256": "094bd40021f40eff37ebd1ccf3fe715d63dcf726e7f3fdb4cde80c1b0722c929"
+    },
+    "ks-gov-gen": {
+      "file": "ks-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Kansas",
+      "fetchedAt": "2026-10-07T02:42:21.417385Z",
+      "bytes": 1377,
+      "sha256": "830f0a5a6f3b39177de6155e356fbdd02f9becf218f8ba95361696cadc22fa9e"
+    },
+    "me-gov-gen": {
+      "file": "me-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Maine",
+      "fetchedAt": "2026-10-07T02:42:22.034328Z",
+      "bytes": 6115,
+      "sha256": "2064bbda5511b8582e662969e8d22ab2642749091318f00d3d415115e6bd9460"
+    },
+    "fl-gov-gen": {
+      "file": "fl-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Florida",
+      "fetchedAt": "2026-10-07T02:42:22.635764Z",
+      "bytes": 12134,
+      "sha256": "bb39eea2b618ddd48cc31855d8c755bdc36dc699d39034383cb10a92a8027799"
+    },
+    "mn-gov-gen": {
+      "file": "mn-gov-gen.json",
+      "url": "https://api.votehub.com/polls?poll_type=governor&subject=2026+Minnesota",
+      "fetchedAt": "2026-10-07T02:42:23.238490Z",
+      "bytes": 7766,
+      "sha256": "bc3ea8f5998efe46bb9762dca4696d01de5b643034d941f052b30c6dec978e8f"
+    }
+  },
+  "vintage": "2026-10-07T02:42:11.186898Z",
+  "source": "VoteHub Polling API (api.votehub.com)",
+  "attribution": "Polling data via VoteHub (https://votehub.com/polls/api/), licensed under Creative Commons Attribution 4.0 International (https://creativecommons.org/licenses/by/4.0/). Retrieved and reshaped by PULSE INTEL \u2014 filtered, deduplicated, and reparsed from VoteHub's raw /polls response; this is a modified excerpt, not the original dataset.",
+  "note": "Each file is the unmodified /polls response body for one race; sha256 is over those exact bytes.",
+  "processedOutput": {
+    "file": "votehub_polls.json",
+    "sha256": "2ec480b08eed887ca39441cd55b35c904c1443b67e3a09cc0f1d900a11dba097"
+  }
+}
