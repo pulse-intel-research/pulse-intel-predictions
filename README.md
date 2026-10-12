@@ -1,113 +1,98 @@
 # PULSE INTEL · Public Predictions Registry
 
-> **Disclosure, 2026-09-28:** the three forecasts locked on 2026-05-09 were not produced by the methodology described below. The weights and validation figures on this page describe a model that was never built. See [`DISCLOSURE-2026-09-28.md`](DISCLOSURE-2026-09-28.md) before relying on anything here.
+This repository is the public, append-only record of PULSE INTEL's locked forecasts. A forecast is locked by committing it here before its election. The git history is the timestamp: anyone can check that a record, and the rules it will be scored by, existed before the result.
 
-This is a public, append-only record of political forecasts made by **PULSE INTEL**, a bipartisan political analytics platform under development by Jonathan Epstein. Every prediction in this registry was committed to git **before** the corresponding race resolved, with timestamps that anyone can verify against this repo's git history.
+What it holds today: **11 forecasts for the November 3, 2026 general elections**, locked on 2026-10-08 under methodology v61.40, the methodology and its addendum, the rules they will be scored by, and a disclosure about earlier forecasts.
 
----
+## The 11 locked forecasts
 
-## Why this registry exists
+Locked 2026-10-08T03:40:41.902Z (commit `6d37251`), as of 2026-10-07, by build `pulse-intel-v6140.html` (SHA-256 `acca933752b328c06803ae6afd3615c731e134c6f949a328654bbb50ba5b7bb6`).
 
-Political forecasting is a credibility-starved field. Most "forecasters" make predictions that are never publicly recorded, never closed-loop validated against actual results, and never accompanied by methodology disclosure. PULSE INTEL takes a different approach:
+| Race | Principal candidates | Predicted winner | Lead (pts) | Win probability |
+|---|---|---|---|---|
+| [Florida Governor 2026](predictions/2026-11-03/fl-gov-gen.json) | Byron Donalds (R) vs David Jolly (D) | Byron Donalds | 2.69 | 71.8% |
+| [Georgia Governor 2026](predictions/2026-11-03/ga-gov-gen.json) | Rick Jackson (R) vs Keisha Lance Bottoms (D) | Rick Jackson | 0.88 | 57.5% |
+| [Georgia Senate 2026](predictions/2026-11-03/ga-sen-gen.json) | Jon Ossoff (D) vs Mike Collins (R) | Jon Ossoff | 9.32 | 97.7% |
+| [Iowa Governor 2026](predictions/2026-11-03/ia-gov-gen.json) | Zach Lahn (R) vs Rob Sand (D) | Rob Sand | 8.30 | 96.2% |
+| [Iowa Senate 2026](predictions/2026-11-03/ia-sen-gen.json) | Ashley Hinson (R) vs Josh Turek (D) | Josh Turek | 1.49 | 62.5% |
+| [Maine Senate 2026](predictions/2026-11-03/me-sen-gen.json) | Susan Collins (R) vs Troy Jackson (D) | Troy Jackson | 2.22 | 68.3% |
+| [Michigan Senate 2026](predictions/2026-11-03/mi-sen-gen.json) | Abdul El-Sayed (D) vs Mike Rogers (R) | Abdul El-Sayed | 2.90 | 73.3% |
+| [North Carolina Senate 2026](predictions/2026-11-03/nc-sen-gen.json) | Roy Cooper (D) vs Michael Whatley (R) | Roy Cooper | 9.66 | 98.1% |
+| [New Hampshire Senate 2026](predictions/2026-11-03/nh-sen-gen.json) | John E. Sununu (R) vs Chris Pappas (D) | Chris Pappas | 5.52 | 88.1% |
+| [Ohio Senate 2026](predictions/2026-11-03/oh-sen-gen.json) | Jon Husted (R) vs Sherrod Brown (D) | Sherrod Brown | 3.86 | 79.6% |
+| [Texas Senate 2026](predictions/2026-11-03/tx-sen-gen.json) | Ken Paxton (R) vs James Talarico (D) | James Talarico | 2.74 | 72.1% |
 
-1. **Predictions are locked to this public registry before each race resolves**, using an automated tool (`lock_prediction.py`) that produces a structured git commit with timestamp.
-2. **Actual results are recorded after each race resolves** using a companion tool (`record_actual.py`), which computes whether the prediction was correct and by how much.
-3. **The methodology is fully documented** (see `PRIMARY_METHODOLOGY.md`) — including its limitations and where the model is being applied out-of-distribution.
-4. **Every commit message follows a strict structured format** so the git log itself serves as an audit trail.
+Each record also holds the margin as first-named minus second-named candidate, σ, the 80% and 95% margin ranges, the polls used with their weights, the eligibility check, and the SHA-256 of every input file. `predictions.json` indexes the 11 records.
 
-If you're evaluating PULSE INTEL as a vendor, sales asset, journalistic source, or methodology peer — start with the git log. Every prediction's pre-race lock commit is timestamped. Compare predicted vs actual via the per-race files in `predictions/`.
+## Methodology
 
----
+[`METHODOLOGY-v61.40.md`](METHODOLOGY-v61.40.md), generated from the build's own outputs at lock time:
 
-## What's currently tracked
+- **Polls only.** VoteHub, snapshot 2026-10-07T02:42:11Z. Partisan-sponsored and internal polls excluded; one row per fielding; a poll must give a number for both principal candidates.
+- **Recency-weighted average.** Weight = 0.5^(age in days / 30) × the poll's 538 pollster weight. No house effects, no pollster grades.
+- **σ = max(poll σ, 4.67)**, where 4.67 is the mean error of a polling average across 730 Senate and Governor generals, 1998–2022 (538 library). The floor binds in all 11 races, so win probability = Φ(margin / 4.67), and the ranges are margin ± 1.282 × 4.67 (80%) and ± 1.96 × 4.67 (95%).
+- **Lock rule.** At least 8 polls after exclusions and the newest within 45 days; in Maine, two-way polls only. The races that failed it are listed in the methodology.
+- **Not used:** fundamentals, expert ratings, sentiment, momentum, calibration.
 
-**2026 primaries (5 flagship races):**
+[`METHODOLOGY-v61.40-addendum-2026-10-08.md`](METHODOLOGY-v61.40-addendum-2026-10-08.md) reports a walk-forward backtest of the same method on those 730 races, run after the locks. The day before the election, its 80% and 95% ranges held the result 70.8% and 88.9% of the time; coverage was lower at longer horizons. The locks were made 27 days out, so **their ranges are expected to be too narrow**. The records are unchanged and will be scored as locked.
 
-| Race | Primary Date | Lock Date | Status |
-|------|--------------|-----------|--------|
-| KY Senate (R) | May 19, 2026 | May 9, 2026 | Scheduled |
-| AL Senate (R) | May 19, 2026 | May 9, 2026 | Scheduled |
-| CA Governor | June 2, 2026 | May 23, 2026 | Scheduled |
-| MI Senate | August 4, 2026 | July 25, 2026 | Scheduled |
-| MN Senate | August 11, 2026 | August 1, 2026 | Scheduled |
+## Scoring
 
-**Status updates** are written to `predictions.json` and propagated to `predictions/<race_id>.json` on each lock and resolution.
+[`SCORING-2026-GENERALS.md`](SCORING-2026-GENERALS.md), committed 2026-10-12 (commit `b020616`), before any result existed. It fixes:
 
----
+- the SHA-256 each lock record must have;
+- the certified-result format;
+- when a race is not scored;
+- the definitions (actual margin in points of all votes cast, winner call, error, range coverage, Brier score);
+- the totals.
 
-## How to read this registry
+It pins the scorer, `score_generals_2026.py` in the platform repository, by its SHA-256. It will not be edited after the polls close; a change would be a new dated file, with both sets of scores published.
 
-### `predictions.json` — current state of all tracked races
+## Disclosure
 
-A single file containing every race the platform has committed to forecasting, including:
-- Locked predictions (winner, margin, confidence interval, methodology version)
-- Actual results (after primary resolves)
-- Computed accuracy metrics (called_correctly, margin_error_pts, within_confidence)
-- Timestamps for every state transition
+[`DISCLOSURE-2026-09-28.md`](DISCLOSURE-2026-09-28.md) (extended 2026-10-07), with evidence in [`DISCLOSURE-2026-09-28-evidence.md`](DISCLOSURE-2026-09-28-evidence.md):
 
-### `predictions/<race_id>.json` — durable per-race records
+- **May primary forecasts.** The three primary forecasts locked here on 2026-05-09 were produced with simulated inputs, not the methodology published with them. They are not valid model forecasts.
+- **June 29 primary calls.** These were written in an AI-assisted research session, not by the model.
+- **May 26 general-election predictions.** This document was never published or locked, and it is withdrawn in full.
 
-One file per race. **These files are append-only** — they accumulate fields as races progress through scheduled → locked → resolved. The original locked-prediction fields are never modified once written; only resolution fields are added.
+For the races it shares with the 11 above, the v61.40 locks are the only registered calls.
 
-### Git log — the audit trail
+## Check it yourself
 
-Every commit follows a structured message format:
+**When each record was made.** `git log --format='%h %cI %s' -- predictions/2026-11-03 SCORING-2026-GENERALS.md` shows the locks (committed 2026-10-08 03:40 UTC; git prints it in the committer's time zone, 2026-10-07 20:40 −07:00) and the scoring rules (2026-10-12), both before the election.
 
+**That a record is unchanged.** `shasum -a 256 predictions/2026-11-03/*.json` should match the hashes listed in `SCORING-2026-GENERALS.md`.
+
+**Reproduce a lock.** The locked build and every input it used are in the platform repository, `pulse-intel-research/pulse-intel-prototype`. Clone it, clone this registry inside it as `pulse-intel-predictions/`, then:
+
+```sh
+cd harnesses && npm install && cd ..
+node reproduce_locks_v6140.js
 ```
-Lock prediction: Kentucky Senate — Republican Primary
 
-race_id:             ky-senate-r-primary-2026
-primary_date:        2026-05-19
-locked_at_utc:       2026-05-09T13:42:11+00:00
-predicted_winner:    Andy Barr
-predicted_margin:    +5.50 pts
-confidence_interval: ±6.00 pts
-methodology_version: v1-primary-2026
+It checks the build's SHA-256, loads the build, recomputes each race with `ensemblePredict(race_id)`, and compares the predicted winner, margin, win probabilities, σ and both ranges with the record, field by field. It writes nothing. Each input file's hash is in its lock record's `input_files`.
 
-Locked via lock_prediction.py before any primary results were known.
+**Run the scorer.** After the results are certified, each goes in the platform repository's `data/results_2026/<race_id>.json`, with the certified source document saved and hashed. The format is in `SCORING-2026-GENERALS.md`. Then:
+
+```sh
+shasum -a 256 score_generals_2026.py      # must equal the hash pinned in SCORING-2026-GENERALS.md
+python3 score_generals_2026.py --json scores.json
 ```
 
-To verify a prediction was made before a race: `git log --all --grep="<race_id>"`.
+It refuses any race without a certified result, or whose lock record doesn't match its pinned hash, and says why. Until then, `node harnesses/17-scoring-v6147.js` runs it on labelled test fixtures and recomputes every number.
 
----
+## Older files
 
-## About the methodology
+These are kept unchanged, because the registry is append-only, and are superseded:
 
-**For primary forecasts:** see `PRIMARY_METHODOLOGY.md` in this repo for the full disclosure. Briefly:
+- `predictions/2026-05-19/`: the three May primary records covered by the disclosure.
+- `PRIMARY_METHODOLOGY.md`: the primary methodology published with them. The disclosure supersedes it.
+- `lock_prediction.py`: the interactive tool used for those locks. Its docstring describes the withdrawn method. The 11 general-election records were written by `lock_generals_v6140.js` in the platform repository.
+- `real_polls.json`: polls curated by hand in April 2026. No current forecast uses it.
 
-- PULSE INTEL's underlying model (Composite-tuned ensemble) was calibrated against 65 general elections, not primaries. Applying it to primaries is **an out-of-distribution stretch**, and we say so explicitly in every primary forecast's methodology notes.
-- Specific adjustments are made for primary use (incumbency zeroed, approval signal removed, sentiment signal removed, polls limited to independent pollsters, confidence interval widened 1.5x).
-- The model's general-election performance — not yet tested in production but validated in a 65-race backtest (3.59 MAE, 72.3% direction, 90.9% governors-subset direction) — does not transfer guaranteed to primaries. Each primary forecast should be evaluated on its own merits, not against the general-election performance numbers.
+## Append-only
 
-**For general election forecasts (planned for November 2026):** the Composite-tuned methodology applies directly. Each November forecast will use `methodology_version: v1-composite-tuned` and the standard coefficients (polls 0.20, fundamentals 0.22, expert 0.29, approval 0.68, sentiment 0.45, incumbency 1.00).
+A locked record is never edited, re-issued or deleted. Corrections and later findings go in new dated files beside the records (as the disclosure and the addendum do), and the git history keeps every version.
 
----
-
-## What this registry is NOT
-
-- **Not a comprehensive forecast service.** Only the 5 flagship 2026 primaries (and forthcoming general-election scaffolds) are tracked here. PULSE INTEL the platform covers many more races; this registry is the subset where we've made formal locked predictions.
-- **Not a real-time data feed.** Predictions are locked manually using `lock_prediction.py` on scheduled lock dates. Between locks, this registry doesn't change.
-- **Not a substitute for the underlying analytics platform.** PULSE INTEL the SaaS prototype includes 16+ panels covering polling, fundamentals, geographic intelligence, messaging, fundraising, and more. This registry is specifically the closed-loop forecasting record.
-
----
-
-## Tools used to maintain this registry
-
-- **`lock_prediction.py`** — locks a prediction to the registry on the scheduled lock date (10 days before each primary). Refuses to overwrite existing locks without `--force`. Refuses to lock after the primary date. Generates structured commits.
-- **`record_actual.py`** — records the actual result after a race resolves. Computes accuracy metrics. Refuses to record before the primary date. Generates structured commits.
-- Both tools are open-source Python (no dependencies beyond stdlib + git). Available at: [scripts location TBD]
-
----
-
-## Contact
-
-For methodology questions, vendor inquiries, or peer review:
-
-**Jonathan Epstein**
-Building PULSE INTEL · 2026
-[Contact info to be added]
-
----
-
-*Last registry-level update: 2026-04-26*
-*Next scheduled lock: KY Senate (R) primary, May 9, 2026*
+Questions: Jonathan Epstein, PULSE INTEL.
