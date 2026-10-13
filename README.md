@@ -38,7 +38,7 @@ Each record also holds the margin as first-named minus second-named candidate, �
 
 ## Scoring
 
-[`SCORING-2026-GENERALS.md`](SCORING-2026-GENERALS.md), committed 2026-10-12 (commit `b020616`), before any result existed. It fixes:
+[`SCORING-2026-GENERALS.md`](SCORING-2026-GENERALS.md), committed 2026-10-12 (commit `b020616`), before any result existed, with one [addendum](SCORING-2026-GENERALS-addendum-2026-10-12.md) of the same date, also before any result. The addendum moves the published results to this registry, in `results_2026/`, and changes nothing else. The rules fix:
 
 - the SHA-256 each lock record must have;
 - the certified-result format;
@@ -60,7 +60,7 @@ For the races it shares with the 11 above, the v61.40 locks are the only registe
 
 ## Check it yourself
 
-**When each record was made.** `git log --format='%h %cI %s' -- predictions/2026-11-03 SCORING-2026-GENERALS.md` shows the locks (committed 2026-10-08 03:40 UTC; git prints it in the committer's time zone, 2026-10-07 20:40 −07:00) and the scoring rules (2026-10-12), both before the election.
+**When each record was made.** `git log --format='%h %cI %s' -- predictions/2026-11-03 SCORING-2026-GENERALS.md SCORING-2026-GENERALS-addendum-2026-10-12.md` shows the locks (committed 2026-10-08 03:40 UTC; git prints it in the committer's time zone, 2026-10-07 20:40 −07:00) and the scoring rules and their addendum (2026-10-12), all before the election.
 
 **That a record is unchanged.** `shasum -a 256 predictions/2026-11-03/*.json` should match the hashes listed in `SCORING-2026-GENERALS.md`.
 
@@ -80,7 +80,7 @@ Each lock record also pins the SHA-256 of the platform build that produced it (`
 shasum -a 256 verify/score_generals_2026.py
 ```
 
-The output must be `2968815203484b8bd90c3636caa09563a24441ce1e80cfa7677d8acafc946b5e`, the hash in `SCORING-2026-GENERALS.md`. After the results are certified, put one result file per race in `results_2026/` at the registry root. The format is in `SCORING-2026-GENERALS.md`: each file is `<race_id>.json`, and the certified source documents go in `results_2026/sources/` with their SHA-256 in the result file. Then, from the registry root:
+The output must be `2968815203484b8bd90c3636caa09563a24441ce1e80cfa7677d8acafc946b5e`, the hash in `SCORING-2026-GENERALS.md`. After the results are certified, the result files are published in this registry, one per race in `results_2026/` (see the [addendum](SCORING-2026-GENERALS-addendum-2026-10-12.md)). The format is in `SCORING-2026-GENERALS.md`: each file is `<race_id>.json`, and the certified source documents go in `results_2026/sources/` with their SHA-256 in the result file. Then, from the registry root:
 
 ```sh
 python3 verify/score_generals_2026.py --locks-dir predictions/2026-11-03 --results-dir results_2026 --json scores.json
