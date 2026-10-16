@@ -88,6 +88,14 @@ python3 verify/score_generals_2026.py --locks-dir predictions/2026-11-03 --resul
 
 The two flags are needed because the script's built-in defaults are the platform repository's layout. It refuses any race without a certified result, or whose lock record doesn't match its pinned hash, and says why. Until there are results, every race is reported as not scored.
 
+**Write the scored-results report.** After the scorer, from the registry root:
+
+```sh
+python3 verify/make_scored_report.py --scores scores.json --locks-dir predictions/2026-11-03
+```
+
+It writes `reports/2026-generals-scored.md` from the scorer's `scores.json`. The report has one row per race: leader called, win probability, called and actual margin, error, winner right or wrong, and whether the result fell inside the 80% and 95% ranges. It then gives the totals, and a line comparing 80% coverage with the published backtest figure. Every number in it is a number in `scores.json`. A race without a certified result is shown as pending certification, and the totals are labelled partial until all 11 are certified. The script refuses to run if any lock record's SHA-256 doesn't match the hash pinned in the scorer.
+
 ## Older files
 
 These are kept unchanged, because the registry is append-only, and are superseded:
