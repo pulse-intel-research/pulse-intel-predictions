@@ -1,0 +1,31 @@
+{
+ "addendum": {
+  "file": "LEGISLATIVE-BACKTEST-ADDENDUM-2026-10-25.md",
+  "sha256": "35fa3b93b25ff412f960bfebd5ad900e10f07ee239b5e4fa7ff18a1759063b92"
+ },
+ "code_commit": "c7552834a28cb21ebf36426966bdc6fd752511cc",
+ "code_sha256": {
+  "extract.py": "b70d4d94e9f3534016d23a7c8730fce835b719d9e11dd4ce8310f4aa7e9b0402",
+  "fetch_tables.py": "0213a396be09cc85671887164c16662c2720bb397c02ff1bacbec16d1233b481",
+  "model.py": "71d6bea4eeea82067264b15cdaf8b21c2452427f58599a3167d939dd1ff4414e",
+  "report.py": "ac2037eda59aae15e672643549e3a25d1819459b0cb3d017d0aa844d76adb31a",
+  "run.py": "d0b3e43004fc64a806e35fde925511393b44b9df5a1963247a009c81c36146fc",
+  "test_leakage.py": "bf50cebc06ad0ec225a7d40761eb9e1ab4b043fe9c8184806bba553ae7a90d3e"
+ },
+ "manifest_sha256": "a7c13b0f9baf98f403e5063e5a5a5955bd5961c1e4ef87738e868a271c89c3c2",
+ "plan": {
+  "file": "LEGISLATIVE-BACKTEST-PLAN-2026-10.md",
+  "sha256": "b81c2ff452752b299ae44c059aedaae51e1d445cab25a348a05c3db1376bffd1"
+ },
+ "platform_repository": "pulse-intel-research/pulse-intel-prototype",
+ "run": "python3 backtest/run.py score backtest/data <out.json>, once, from code_commit",
+ "seed": 20261025,
+ "test_sessions": [
+  "2015-16",
+  "2017-18",
+  "2019-20",
+  "2021-22",
+  "2023-24"
+ ],
+ "written": "2026-10-25, before the scoring run; no test session has been scored"
+}
